@@ -1,0 +1,40 @@
+{
+  "name": "vuexpresspro-backend",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development nodemon server.js",
+    "copy-env": "shx cp .env.production dist",
+    "build": "ncc build server.js -o dist -m -a && npm run copy-env",
+    "start": "cross-env NODE_ENV=production node dist",
+    "prod": "npm run build && npm run start",
+    "format": "prettier --write .",
+    "preview": "cross-env NODE_ENV=production node dist"
+  },
+  "author": "LoveDoLove",
+  "license": "MIT",
+  "keywords": [],
+  "description": "",
+  "dependencies": {
+    "@types/express": "^5.0.0",
+    "axios": "^1.8.1",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "multer": "^1.4.5-lts.1",
+    "mysql": "^2.18.1",
+    "nodemailer": "^6.10.0",
+    "nodemon": "^3.1.9",
+    "pino": "^9.6.0",
+    "pino-http": "^10.4.0",
+    "pino-pretty": "^13.0.0",
+    "prettier": "^3.5.2",
+    "sharp": "^0.33.5"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.38.3",
+    "cross-env": "^7.0.3",
+    "shx": "^0.3.4"
+  }
+}
