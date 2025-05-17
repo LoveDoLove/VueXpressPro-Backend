@@ -1,80 +1,197 @@
-# VueXpressPro-Backend
+<!-- PROJECT SHIELDS -->
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
 
-VueXpressPro-Backend is a comprehensive backend template designed for web developers looking to build modern, scalable applications using Express.js. This template integrates various middleware and utilities to facilitate the development of robust backend services.
+<br />
+<div align="center">
+  <h3 align="center">VueXpressPro-Backend</h3>
+  <p align="center">
+    A robust Node.js/Express backend boilerplate for scalable web applications.
+    <br />
+    <a href="#"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="#">View Demo</a>
+    &middot;
+    <a href="https://github.com/LoveDoLove/VueXpressPro-Backend/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
+    &middot;
+    <a href="https://github.com/LoveDoLove/VueXpressPro-Backend/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
+  </p>
+</div>
 
-## Features
+<!-- ZMTO Acknowledgment -->
+> **Note:** This project is supported by [ZMTO](https://www.zmto.com) as part of their open-source VPS program. Special thanks to ZMTO for empowering open-source innovation!
 
-- **Express.js** for server-side application logic
-- **Middleware** for handling CORS, cookies, and more
-- **Integration** with MySQL for database interactions
-- **Authentication and authorization** functionalities
-- **Logging** with Pino
-- **File uploads** with Multer
-- **Email handling** with Nodemailer
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgments">Acknowledgments</a></li>
+  </ol>
+</details>
+
+## About The Project
+
+A modular and scalable backend template built with Node.js and Express, designed for rapid development of RESTful APIs and backend services. It includes a structured project layout, utility helpers, and ready-to-use configuration for common backend needs.
+
+### Features
+
+- Express.js server setup
+- Modular routing and controllers
+- Environment-based configuration
+- Utility helpers for encryption, logging, HTTP, and more
+- Example middleware and service structure
+- Ready for integration with databases (see `config/database.js`)
+- Easy to extend and customize
+
+### Built With
+
+* [![Node.js][Node.js]][Node-url]
+* [![Express][Express.js]][Express-url]
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Getting Started
 
-To get started with VueXpressPro-Backend, follow these steps:
+Follow these instructions to set up and run the project locally.
 
-1. **Clone the repository:**
+### Prerequisites
 
+- Node.js (v14 or higher)
+- npm
+
+```sh
+npm install npm@latest -g
+```
+
+### Installation
+
+1. Clone the repository
    ```sh
-   git clone https://github.com/LoveDoLove/VueXpressPro-Backend
-   cd VueXpressPro-Backend
+   git clone https://github.com/LoveDoLove/VueXpressPro-Backend.git
    ```
-
-2. **Install dependencies:**
-
+2. Install dependencies
    ```sh
    npm install
    ```
+3. Configure environment variables  
+   Copy `.env.development` or `.env.production` as needed and update values.
 
-3. **Configure environment variables:**
+4. (Optional) Set up your database in `config/database.js`.
 
-   Create a `.env` file in the root directory and add your configuration settings (e.g., database connection details, email configuration).
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-4. **Run the development server:**
+## Usage
 
-   ```sh
-   npm run dev
-   ```
+Start the development server:
 
-5. **Open your browser:**
+```sh
+npm start
+```
 
-   - Navigate to `http://localhost:3000` to access the backend APIs.
+Or for development with auto-reload (if using nodemon):
 
-## Production Deployment
+```sh
+npm run dev
+```
 
-To deploy VueXpressPro-Backend to a production environment, follow these steps:
+The server will run on the port specified in your `.env` file (default: 3000).
 
-1. **Build the backend:**
+Example API request:
 
-   ```sh
-   npm run build
-   ```
+```sh
+curl http://localhost:3000/api/sample
+```
 
-2. **Start the backend server:**
+_Refer to the `controllers/`, `routes/`, and `services/` directories for more usage examples and API endpoints._
 
-   ```sh
-   npm start
-   ```
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-3. **Open your browser:**
+## Roadmap
 
-   - The backend APIs are accessible at `http://localhost:3000`.
+- [x] Modular project structure
+- [x] Utility helpers
+- [ ] Add authentication module
+- [ ] Add unit/integration tests
+- [ ] Docker support
+- [ ] API documentation (Swagger/OpenAPI)
 
-## Scripts
+See the [open issues](https://github.com/LoveDoLove/VueXpressPro-Backend/issues) for a full list of proposed features (and known issues).
 
-- `dev`: Run the development server with nodemon
-- `build`: Build the project using ncc
-- `start`: Start the production server
-- `prod`: Build and start the production server
-- `format`: Format the code using Prettier
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## Contribution
+## Contributing
 
-Contributions are welcome! If you have suggestions for improvements or new features, please open an issue or submit a pull request.
+Contributions are welcome! Please fork the repo and submit a pull request. You can also open an issue for suggestions or bug reports.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+Distributed under the MIT License. See `LICENSE` for more information.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Contact
+
+Your Name - [@your_twitter](https://twitter.com/LoveDoLove) - email@example.com
+
+Project Link: [https://github.com/LoveDoLove/VueXpressPro-Backend](https://github.com/LoveDoLove/VueXpressPro-Backend)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Acknowledgments
+
+- [Choose an Open Source License](https://choosealicense.com)
+- [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
+- [Img Shields](https://shields.io)
+- [Font Awesome](https://fontawesome.com)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- MARKDOWN LINKS & IMAGES -->
+[contributors-shield]: https://img.shields.io/github/contributors/LoveDoLove/VueXpressPro-Backend.svg?style=for-the-badge
+[contributors-url]: https://github.com/LoveDoLove/VueXpressPro-Backend/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/LoveDoLove/VueXpressPro-Backend.svg?style=for-the-badge
+[forks-url]: https://github.com/LoveDoLove/VueXpressPro-Backend/network/members
+[stars-shield]: https://img.shields.io/github/stars/LoveDoLove/VueXpressPro-Backend.svg?style=for-the-badge
+[stars-url]: https://github.com/LoveDoLove/VueXpressPro-Backend/stargazers
+[issues-shield]: https://img.shields.io/github/issues/LoveDoLove/VueXpressPro-Backend.svg?style=for-the-badge
+[issues-url]: https://github.com/LoveDoLove/VueXpressPro-Backend/issues
+[license-shield]: https://img.shields.io/github/license/LoveDoLove/VueXpressPro-Backend.svg?style=for-the-badge
+[license-url]: https://github.com/LoveDoLove/VueXpressPro-Backend/blob/master/LICENSE
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url]: https://linkedin.com/in/LoveDoLove
+[Node.js]: https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white
+[Node-url]: https://nodejs.org/
+[Express.js]: https://img.shields.io/badge/Express.js-404D59?style=for-the-badge
+[Express-url]: https://expressjs.com/
